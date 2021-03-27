@@ -8,7 +8,12 @@
       <nb-card-body class="card__body">
         You can Sign in with Google
         <div>
-          <button nbButton status="primary" class="login-button">
+          <button
+            (click)="signIn()"
+            nbButton
+            status="primary"
+            class="login-button"
+          >
             <nb-icon icon="google"> </nb-icon>
             Google
           </button>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'vinay-expert-rec-next';
+  constructor(private router: Router) {
+    this.redirectToLoginPage();
+  }
+
+  redirectToLoginPage() {
+    this.router.navigate(['/login']);
+    console.log('http://localhost:4200/login');
+  }
 }

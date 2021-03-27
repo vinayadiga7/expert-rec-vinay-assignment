@@ -1,1 +1,49 @@
-<p>home works!</p>
+<nb-layout>
+  <nb-layout-header class="layout__header">
+    <div class="layout__header-container">
+      <div>Expert Rec</div>
+      <div>
+        <button
+          nbButton
+          status="primary"
+          class="button signout"
+          (click)="signOut()"
+        >
+          Sign Out
+        </button>
+      </div>
+    </div>
+  </nb-layout-header>
+  <nb-layout-column>
+    <nb-card class="card">
+      <nb-card-header class="card__header">User Information</nb-card-header>
+      <nb-card-body class="card__body">
+        <div class="greeting-label">Hey {{ user.firstName }}!</div>
+        <div>
+          Please let us know if your data is correct...
+          <div class="user-container">
+            <figure>
+              <img
+                class="user-container image"
+                src="{{ user.photoUrl }}"
+                alt="profile pic"
+              />
+            </figure>
+          </div>
+          <div>
+            <label>Name: </label>
+            {{ user.name }}
+          </div>
+          <div>
+            <label>Email: </label>
+            {{ user.email }}
+          </div>
+        </div>
+        <div class="compliments">
+          <div>Regards,</div>
+          <div>Team Expert Rec</div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </nb-layout-column>
+</nb-layout>
