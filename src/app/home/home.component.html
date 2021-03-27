@@ -14,7 +14,7 @@
       </div>
     </div>
   </nb-layout-header>
-  <nb-layout-column>
+  <nb-layout-column class="home-container">
     <nb-card class="card">
       <nb-card-header class="card__header">User Information</nb-card-header>
       <nb-card-body class="card__body">
@@ -43,6 +43,43 @@
           <div>Regards,</div>
           <div>Team Expert Rec</div>
         </div>
+      </nb-card-body>
+    </nb-card>
+    <nb-card style="width: 40%">
+      <nb-card-body>
+        <nb-stepper oreintation="horizontal">
+          <nb-step [label]="profilePic">
+            <ng-template #profilePic> PROFILE PICTURE </ng-template>
+            <h4>Step Content #1</h4>
+
+            <div class="user-container">
+              <figure>
+                <img
+                  class="user-container image"
+                  src="{{ user.photoUrl }}"
+                  alt="profile pic"
+                />
+              </figure>
+            </div>
+
+            <button nbButton disabled nbStepperNext>prev</button>
+            <button nbButton nbStepperNext>next</button>
+          </nb-step>
+          <nb-step [label]="name">
+            <ng-template #name> NAME OF THE USER </ng-template>
+            <h4>Step Content #2</h4>
+            <p class="lorem">Name : {{ user.name }}</p>
+            <button nbButton nbStepperNext>prev</button>
+            <button nbButton nbStepperNext>next</button>
+          </nb-step>
+          <nb-step [label]="emailId">
+            <ng-template #emailId> EMAIL ID </ng-template>
+            <h4>Step Content #3</h4>
+            <p class="lorem">Name : {{ user.email }}</p>
+            <button nbButton nbStepperNext>prev</button>
+            <button nbButton disabled nbStepperNext>next</button>
+          </nb-step>
+        </nb-stepper>
       </nb-card-body>
     </nb-card>
   </nb-layout-column>

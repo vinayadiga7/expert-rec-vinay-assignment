@@ -18,4 +18,8 @@ export class UserDataService {
   setUser(user: SocialUser) {
     this.user = user;
   }
+
+  isLoggedIn(): boolean {
+    return !!this.user.authToken;
+  }
 }

@@ -8,6 +8,7 @@ import {
   NbButtonModule,
   NbIconModule,
   NbUserModule,
+  NbStepperModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import {
@@ -22,12 +23,14 @@ import { HomeComponent } from './home/home.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UserDataService } from './user-data.service';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [AuthGuard],
   },
 ];
 
@@ -45,10 +48,12 @@ const routes: Routes = [
     NbIconModule,
     NbUserModule,
     SocialLoginModule,
+    NbStepperModule,
   ],
   exports: [RouterModule],
   providers: [
     UserDataService,
+    AuthGuard,
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
